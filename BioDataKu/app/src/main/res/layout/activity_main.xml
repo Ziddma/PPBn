@@ -127,10 +127,11 @@
         android:id="@+id/btn_map"
         android:layout_width="69dp"
         android:layout_height="67dp"
+        android:layout_marginStart="60dp"
         android:onClick="lokasi1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintEnd_toStartOf="@+id/btn_telefon"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.756"
@@ -140,12 +141,26 @@
         android:id="@+id/btn_telefon"
         android:layout_width="69dp"
         android:layout_height="68dp"
+        android:layout_marginEnd="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintEnd_toStartOf="@+id/btn_email"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.757"
         app:srcCompat="@drawable/telefon" />
+
+    <ImageView
+        android:id="@+id/btn_email"
+        android:layout_width="77dp"
+        android:layout_height="68dp"
+        android:onClick="email1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.755"
+        app:srcCompat="@android:drawable/sym_action_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

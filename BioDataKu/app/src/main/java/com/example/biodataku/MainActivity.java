@@ -32,10 +32,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void lokasi1(View view){
-        Intent browserIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/maps/c22Xy5na3Juapuky7"));
-        startActivity(browserIntent);
+        Uri gmmIntentUri = Uri.parse("geo:-7.055437457799108, 110.43355633861675?q=Isacom olahdata");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
     }
 
+    public void email1(View view) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"ziddma@gmail.com"});
+        intent.putExtra(Intent.EXTRA_CC, new String[]{"111202113932@mhs.ac.id"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Test email aplikasi android");
+        intent.putExtra(Intent.EXTRA_TEXT, "Hai, ini adalah percobaan mengirim email dari aplikasi android");
+
+        try {
+            startActivity(Intent.createChooser(intent, "Ingin Mengirim Email ?"));
+        } catch (android.content.ActivityNotFoundException ex) {
+            //do something else
+        }
+    }
 
 
 
